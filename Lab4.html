@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myElement">
+        <p>Welcome to my website!</p>
+    </div>
+    <script>
+        document.getElementById("myElement").innerText = "Hello Ikram";
+    </script>
+
+    <div>
+        <input type="text" id="userInput" placeholder="Enter a number">
+        <button onclick="checkInput()">Check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkInput() {
+            const userInput = document.getElementById("userInput").value;
+            const parsedInput = parseFloat(userInput);
+
+            if (isNaN(parsedInput)) {
+                alert("Please insert a number!");
+            } else if (parsedInput < 10) {
+                document.getElementById("result").innerText = "The number is lower than 10";
+            } else {
+                document.getElementById("result").innerText = "The number is higher than 10";
+            }
+        }
+    </script>
+
+    <div>
+        <p id="demo"></p>
+    </div>
+    <script>
+        let text = "";
+        for (let i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
